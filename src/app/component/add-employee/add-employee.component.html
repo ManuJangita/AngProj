@@ -1,0 +1,35 @@
+<div class="w-50 shadow border mx-auto p-3">
+    <form action="" method="post" (submit)="handleSubmitDate()">
+        <div>
+            <h5 class="text-primary text-center">Employee details are stored...</h5>
+        </div>
+    <div>
+        <label for="ename">Enter EmpName:</label>
+        <input type="text" class="form-control" id="ename" placeholder="Enter EmpName" name="name" [(ngModel)]="EmployeeModel.empName">
+    </div>
+    <div class="mt-2">
+        <label for="num">Enter EmpNo:</label>
+        <input type="number" class="form-control" placeholder="Enter Number" id="num" name="no" [(ngModel)]="EmployeeModel.empNo">
+    </div>
+    <div class="mt-2">
+        <label for="desg">Enter Desegnation:</label>
+        <input type="text" class="form-control" placeholder="Enter Desegnation" id="desg" name="des" [(ngModel)]="EmployeeModel.designation">
+    </div>
+    <div class="mt-2">
+        <label for="bank">Enter bankAccount:</label>
+        <input type="number" class="form-control" placeholder="Enter bankAccount" id="bank" name="ba" [(ngModel)]="EmployeeModel.bankAccount">
+    </div>
+    <div class="mt-2">
+        <label for="pan">Enter pan:</label>
+        <input type="text" class="form-control" placeholder="Enter panNumber" id="pan" name="pan" [(ngModel)]="EmployeeModel.pan">
+    </div> 
+    <div class="mt-2">
+        <label for="doj">Enter doj:</label>
+        <input type="date" class="form-control" id="doj" placeholder="Enter doj" name="doj" [(ngModel)]="EmployeeModel.doj">
+    </div>
+    <div class="mt-2">
+        <button type="submit" class="btn btn-primary ms-2">save</button>
+        <button type="button" class="btn btn-secondary ms-2" (click)="handleCancelForm()">cancel</button>
+    </div>
+    </form>
+</div>

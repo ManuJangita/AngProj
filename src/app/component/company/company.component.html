@@ -1,0 +1,57 @@
+<div class="home">
+    <div class="body">
+        <span class="d-flex justify-content-between">
+            <button class="btn btn-primary ms-3">Company</button>
+            <button class="btn btn-primary mx-3" (click)="addCompany()">Add Company</button>
+        </span>
+        <div *ngIf="displayForm">
+            <app-add-company [companyModel]="companyModel" (eventEmitter)="handleCancelForm($event)"
+                (onSubmit)="handleFormDate($event)"></app-add-company>
+
+        </div>
+        <div class="input-group mb-3 mt-3 w-25 mx-auto">
+            <input mdbInput type="search" id="form1" class="form-control" (input)="search($event)" placeholder="Search"/>
+              <button class="btn btn-primary"><i class="bi bi-search"></i></button>
+        </div>
+        <div>
+
+        </div>
+        <div>
+            <table class="table table-striped border w-100 mx-auto text-center table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <!-- <th>Sr.No</th> -->
+                        <th>Company</th>
+                        <th>mobile</th>
+                        <th>address1</th>
+                        <th>address2</th>
+                        <th>landmark</th>
+                        <th>town</th>
+                        <th>state</th>
+                        <th>pincode</th>
+                        <th>createdDate</th>
+                        <th>logo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let company of companies;let i=index">
+                        <!-- <td>{{i+1}}</td> -->
+                        <td>{{company.companyName}}</td>
+                        <td>{{company.mobileNumber}}</td>
+                        <td>{{company.addressLine1}}</td>
+                        <td>{{company.addressLine2}}</td>
+                        <td>{{company.landMark}}</td>
+                        <td>{{company.town}}</td>
+                        <td>{{company.state}}</td>
+                        <td>{{company.pinCode}}</td>
+                        <td>{{company.createdDate}}</td>
+                        <td>{{company.logoName}}</td>
+                        <td><button class="btn btn-danger" (click)="delete(i)">Delete</button>
+                            <button class="btn btn-primary" (click)="editForm(i)">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

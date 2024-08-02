@@ -1,0 +1,57 @@
+<div class="w-50 mx-auto border p-2 shadow mb-3">
+    <form #companyForm="ngForm" method="post" autocomplete="off" (ngSubmit)="handleSubmit()">
+        <div class="text-center text-primary">
+            <!-- <h5>Adding Employee Details: {{companyObj | json}}</h5> -->
+            <h5>Adding Employee Details:</h5>
+        </div>
+        <div class="form-group mb-1">
+            <label for="cname">CompanyName:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter companyName" name="cname" 
+            [(ngModel)]="companyModel.companyName" required #companyNameCtrl="ngModel" minlength="15">
+        </div>
+        <div class="text-danger" *ngIf="companyNameCtrl.invalid && (companyNameCtrl.touched || companyNameCtrl.dirty)">
+            <small *ngIf="companyNameCtrl.errors?.['required']">Company Name is required</small><br>
+            <small *ngIf="companyNameCtrl.errors?.['minlength']">Company Name must be there in 15 characters below and above 3 characters...</small>
+        </div>
+        <div class="form-group mb-1">
+            <label for="wsite">mobileNumber:</label>
+            <input type="number" class="form-control" id="mname" placeholder="Enter mobileNumber" name="mobile" [(ngModel)]="companyModel.mobileNumber"required>
+        </div>
+        <div class="form-group mb-1">
+            <label for="pin">PinCode:</label>
+            <input type="number" class="form-control" id="pin" placeholder="Enter pincode" name="pcode" [(ngModel)]="companyModel.pinCode"required>
+        </div>
+        <div class="form-group mb-1">
+            <label for="add1"> addressLine1:</label>
+            <input type="text" class="form-control" id="add1" placeholder="Enter addressLine1" name="addrs1" [(ngModel)]="companyModel.addressLine1"required>
+        </div>
+        <div class="form-group mb-1">
+            <label for="add2">addressLine2:</label>
+            <input type="text" class="form-control" id="add2" placeholder="Enter addressLine2" name="addrs2" [(ngModel)]="companyModel.addressLine2"required>
+        </div>
+        <div class="form-group mb-1">
+            <label for="land">LandMarkName:</label>
+            <input type="text" class="form-control" id="land" placeholder="Enter landMark" name="land" [(ngModel)]="companyModel.landMark"required>
+        </div>
+        <div class="form-group mb-1">
+            <label for="logo">LogoName:</label>
+            <input type="text" class="form-control" id="logo" placeholder="Enter landMark" name="log" [(ngModel)]="companyModel.logoName"required>
+        </div>
+        <div class="form-group mb-1">
+            <label for="tow">TownName:</label>
+            <input type="text" class="form-control" id="tow" placeholder="Enter landMark" name="towName" [(ngModel)]="companyModel.town"required>
+        </div>
+        <div class="form-group mb-1">
+            <label for="stat">StateName:</label>
+            <input type="text" class="form-control" id="stat" placeholder="Enter landMark" name="stateName" [(ngModel)]="companyModel.state"required>
+        </div>
+        <div class="form-group mb-1">
+            <label for="land">createdDate:</label>
+            <input type="date" class="form-control" id="land" placeholder="Enter landMark" name="land" [(ngModel)]="companyModel.createdDate"required>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" [disabled]="companyForm.invalid">addCompany</button>
+            <button type="button" class="btn btn-primary ms-2"(click)="CancelForm()">cancel</button>
+        </div>
+    </form>
+</div>

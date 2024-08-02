@@ -1,0 +1,16 @@
+.home{
+    position: fixed;
+    top: 7vh;
+    background-color: rgb(255, 166, 0);
+    height: calc(100vh - 12vh);
+    width: 200px;
+}
+.body{
+    padding-top: 5px;
+}
+.selected{
+    background-image: linear-gradient(rgb(192,81,81),rgb(34, 34, 94));
+}
+a:hover{
+    background-image: linear-gradient(rgb(192,81,81),rgb(34, 34, 94));
+}

@@ -1,0 +1,12 @@
+.home{
+    position: relative;
+    top: 7vh;
+    background-image: linear-gradient(rgb(192,81,81),rgb(34, 34, 94));
+    width: 87%;
+    height: calc(100vh - 12vh);
+    overflow-y: scroll;
+    margin-left: 200px;
+}
+.body{
+    padding-top: 5px;
+}

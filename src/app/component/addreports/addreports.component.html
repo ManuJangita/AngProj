@@ -1,0 +1,36 @@
+<div class="w-50 mx-auto border p-2 shadow mb-3">
+    <form  method="post" autocomplete="off">
+        <div class="text-center text-primary">
+            <!-- <h5>Adding Employee Details: {{companyObj | json}}</h5> -->
+            <h5>Adding Report Details:</h5>
+        </div>
+        <div class="form-group mb-1">
+            <label for="cname">reportName:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter reportName" name="cname"  [formControl]="reportctl" required>
+        </div>
+        
+            <small class="text-danger" *ngIf="reportctl.invalid && (reportctl.dirty || reportctl.touched)">report name is manditory...</small><br>
+            <small *ngIf="reportctl.errors?.['AppCustomValidate']">report name must be there in 4 characters</small>
+
+        <div class="form-group mb-1">
+            <label for="wsite">mobileNumber:</label>
+            <input type="number" class="form-control" id="mname" placeholder="Enter mobileNumber" name="mobile" [formControl]="numberctl" required>
+        </div>
+        <div class="form-group mb-1">
+            <label for="hnane">HospitalName:</label>
+            <input type="number" class="form-control" id="hname" placeholder="Enter HospitalName" name="hname" >
+        </div>
+        <div class="form-group mb-1">
+            <label for="add1"> addressLine:</label>
+            <input type="text" class="form-control" id="add1" placeholder="Enter addressLine1" name="addrs1">
+        </div>
+        <div class="form-group mb-1">
+            <label for="logo">Amount:</label>
+            <input type="number" class="form-control" id="amount" placeholder="Enter Amount" name="amount">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" >AddReport</button>
+        </div>
+    </form>
+</div>
+

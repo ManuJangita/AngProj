@@ -1,0 +1,26 @@
+<div class="home">
+    <div class="body">
+        <form action="" autocomplete="off" (ngSubmit)="handleForm()" class="pt-3 ms-3">
+            <div class="container w-50 mb-3  border rounded shadow mx-auto">
+                <h1 class="text-center text-primary border-bottom border-color">signin page </h1>
+                <div class="mb-1 text-danger bg-warning" *ngIf="isInValid">
+                    <small class="">userName and password is wrong</small>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email" [(ngModel)]="userName" name="user">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" [(ngModel)]="password" name="pwd">
+                </div>
+                <div class="text-center mb-1">
+                    <button type="submit" class="btn btn-primary">signin</button>
+                    <a routerLink="/registration" class="btn btn-primary ms-3">Registration</a>
+                </div>
+            </div>
+            <div>
+            </div>
+        </form>
+    </div>
+</div>
